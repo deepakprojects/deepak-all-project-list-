@@ -1,0 +1,17 @@
+#
+from time import sleep
+a=int(input("enter the number :"))
+b=int(input("enter the number :"))
+c=a*b
+print(c)
+
+while True:
+    
+  
+    print(c)
+    a=int(input("enter the number :"))
+    b=int(input("enter the number :"))
+    c=a*b
+    sleep(5)
+
+    
