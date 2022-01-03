@@ -1,0 +1,57 @@
+Voice Detection Code using bluetooth: 
+#include <SoftwareSerial.h>
+String value;
+int TxD = 11;
+int RxD = 10;
+int buzzpin=13;
+SoftwareSerial bluetooth(TxD, RxD);
+
+void setup() {
+Serial.begin(9600);
+pinMode(13,OUTPUT);
+ // pinMode(2, OUTPUT);
+  //pinMode(3, OUTPUT);
+//  Serial.begin(9600);       // start serial communication at 9600bps
+  bluetooth.begin(9600);
+}
+
+void loop() {
+  Serial.println(value);
+  if (bluetooth.available())
+   {
+    value = bluetooth.readString();
+
+    if (value == "help"){
+    digitalWrite(13,HIGH); //turns led ON
+    delay(1000);
+      }
+   
+//
+//    if (value == "OFF"){
+//    digitalWrite(buzzpin,LOW);
+//    delay(1000);  
+//      }
+//  
+//
+  if (value == "aaaaarrrrrgh"){
+   digitalWrite(13, HIGH);
+   }
+}
+}  
+////
+//  //  if (value == "turn on green LED"){
+//    //  digitalWrite(3, HIGH);      
+//      //}
+//      
+//    if (value == "turn off red LED"){
+//    digitalWrite(12, LOW);
+//      }
+//}
+//
+//   // if (value == "turn off green LED"){
+//   // digitalWrite(3, LOW);      
+//      //}
+//
+//// }
+//
+////}
